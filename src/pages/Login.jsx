@@ -1,7 +1,7 @@
 import React from 'react'
 import phone from '../assets/gamers.jpg'
 import { LoginCard } from '../components/login/LoginCard'
-import backgroundImage from '../assets/downloadd.jpg'
+import backgroundImage from '../assets/download.jpeg'
 
 export const Login=()=> {
     return (
