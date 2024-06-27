@@ -1,7 +1,7 @@
 import React from 'react'
 import phone from '../assets/gamers.jpg'
 import { SignupCard } from '../components/login/SignupCard'
-import backgroundImage from '../assets/download.jpg'
+import backgroundImage from '../assets/downloadd.jpg'
 
 export function Signup() {
   return (
