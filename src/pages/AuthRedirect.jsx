@@ -24,7 +24,7 @@ export default function AuthRedirect() {
             localStorage.setItem('refresh_token', query.get('refresh_token'))
             localStorage.setItem('user', JSON.stringify(res.data))
             context.setAuth(res.data)
-            navigate('/')
+            navigate('/home')
         }).catch(err => {
             console.log(err);
             setErr("Something unexpected happened")

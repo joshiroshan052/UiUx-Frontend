@@ -106,7 +106,7 @@ function App() {
         <div className="main-body">
           <Routes>
             <Route
-              path="/login"
+              path="/"
               element={
                 <Redirect>
                   <Login />
@@ -128,7 +128,7 @@ function App() {
             <Route path="/oauth/redirect" element={<AuthRedirect />} />
             <Route path="/chats/:id" element={<Chat />} />
             <Route path="/story/:userId" element={<Story />} />
-            <Route exact path="/" element={<Home stories={stories} />} />
+            <Route exact path="/home" element={<Home stories={stories} />} />
 
             <Route path="/saved/:username" element={<Profile post={false} />} />
             <Route path="/reset/:token" element={<Password />} />

@@ -51,7 +51,7 @@ export default function ViewBox({ stories }) {
 
     const timer = setTimeout(() => {
       clearInterval(barValue);
-      if (!stories.next) navigate('/');
+      if (!stories.next) navigate('/home');
       else navigate(`/story/${stories.next.owner}?id=${stories.next.id}`);
     }, 6000);
 

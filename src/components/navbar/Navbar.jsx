@@ -68,15 +68,15 @@ export const Navbar = ({ active }) => {
       token: localStorage.getItem('refresh_token')
     }).then((resp) => {
       if (resp.data) {
-        localStorage.clear()
-        window.location.reload()
-        context.setAuth(null)
+        localStorage.clear();
+        context.setAuth(null);
+        window.location.replace("/"); // Navigate to the homepage
       }
     }).catch((err) => {
-
-    })
+      console.error("Logout error:", err);
+    });
   }
-  context.logout = logout
+  context.logout = logout;  
 
   const upload = async (e) => {
     const file = e.target.files[0]
@@ -127,7 +127,7 @@ export const Navbar = ({ active }) => {
     <div className="navbar flex" style={{backgroundColor:"rgba(60, 0, 107)"}}>
       <div className="width60s nav flex justity-between">
         <div className="logo" style={{ display: 'flex', alignItems: 'center' }}>
-          <Link to="/" className="flex">
+          <Link to="/home" className="flex">
             <img src={logo} style={{  height: '70px' }} alt="Logo" />
            
           </Link>
@@ -137,7 +137,7 @@ export const Navbar = ({ active }) => {
           <Search />
         </div>
         <div className="icons">
-          <NavLink to="/" >{(active === "home" && !innerActive) ? homeFill : homeOutline}</NavLink>
+          <NavLink to="/home" >{(active === "home" && !innerActive) ? homeFill : homeOutline}</NavLink>
           <Link to="/chats/all">{(active === "chat" && !innerActive) ? messageFill : messageOutline}</Link>
 
           <button onClick={handleClickOpen} className="no-style " >{innerActive === "newpost" ?
